@@ -31,6 +31,6 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'ist.meic.pa.FunctionalProfiler.App'
+mainClassName = 'ist.meic.pa.FunctionalProfiler.WithFunctionalProfiler'
 
 
