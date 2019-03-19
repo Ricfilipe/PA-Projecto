@@ -23,6 +23,8 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:27.0.1-jre'
+    // https://mvnrepository.com/artifact/org.javassist/javassist
+    compile group: 'org.javassist', name: 'javassist', version: '3.24.1-GA'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
@@ -30,3 +32,5 @@ dependencies {
 
 // Define the main class for the application
 mainClassName = 'ist.meic.pa.FunctionalProfiler.App'
+
+

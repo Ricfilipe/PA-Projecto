@@ -3,6 +3,8 @@
  */
 package ist.meic.pa.FunctionalProfiler;
 
+
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
