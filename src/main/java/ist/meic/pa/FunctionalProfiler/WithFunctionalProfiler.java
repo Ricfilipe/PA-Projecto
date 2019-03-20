@@ -20,7 +20,7 @@ public class WithFunctionalProfiler {
 
             Translator translator = new ProfilerTranslator();
             ClassPool pool = ClassPool.getDefault();
-            pool.importPackage("PA.JAexemplo.Counter");
+            pool.importPackage("ist.meic.pa.FunctionalProfiler");
             Loader classLoader = new Loader();
             classLoader.addTranslator(pool, translator);
             String[] restArgs = new String[args.length - 1];

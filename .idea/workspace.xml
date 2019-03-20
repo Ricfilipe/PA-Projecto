@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3977f22d-1af3-4634-8f90-6e146cbb2d8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/ProfilerTranslator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandPrint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/ProfilerTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/ProfilerTranslator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/WithFunctionalProfiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/WithFunctionalProfiler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -80,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="612">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -92,8 +91,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="187">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandPrint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#594#595#0" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +119,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="188">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1182#1183#0" expanded="true" />
+                <element signature="e#1209#1210#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +133,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="170">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="39" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1326#1327#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,17 +147,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Entry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+            <state relative-caret-position="221">
+              <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1124#1125#0" expanded="true" />
@@ -139,11 +167,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/ProfilerTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="340">
+              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -155,7 +183,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/WithFunctionalProfiler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+              <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -181,13 +209,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/App.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Entry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/WithFunctionalProfiler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/ProfilerTranslator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandPrint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" />
       </list>
     </option>
   </component>
@@ -203,6 +232,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -241,17 +271,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553093428179" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553101552468" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PA-JAexemplo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -324,7 +353,8 @@
       <option name="presentableId" value="Default" />
       <updated>1553029720163</updated>
       <workItem from="1553029731204" duration="1190000" />
-      <workItem from="1553074434888" duration="5305000" />
+      <workItem from="1553074434888" duration="6192000" />
+      <workItem from="1553099614776" duration="1935000" />
     </task>
     <task id="LOCAL-00001" summary="update gradle">
       <created>1553075242628</created>
@@ -333,11 +363,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553075242628</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Structure of the code">
+      <created>1553093542279</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553093542280</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6495000" />
+    <option name="totallyTimeSpent" value="9317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,7 +389,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -367,7 +404,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -378,7 +415,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" visible="true" weight="0.3295302" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.3295302" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -389,7 +426,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gradle" />
+    <MESSAGE value="Structure of the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Structure of the code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/gradlew">
@@ -406,50 +444,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="612">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -457,7 +455,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/WithFunctionalProfiler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -466,10 +464,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/ProfilerTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="340">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Entry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandPrint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandWrite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -530,7 +595,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>PA-Projecto</last-edited>
+          <last-edited>main|PA-Projecto</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -7,18 +7,15 @@ public class Database {
     public static Map<Class,Entry> dictionary = new HashMap<>();
 
     public static String toText(){
-        int totalreads=0;
-        int totalwrites=0;
+        CommandRead cmdRead= new CommandRead();
+        CommandWrite cmdWrite= new CommandWrite();
+
         String buffer= "";
         for(Class c: dictionary.keySet()){
-            totalreads = totalreads + dictionary.get(c).readerCounter;
-            totalwrites = totalwrites + dictionary.get(c).writeCounter;
-
-            buffer= buffer + c+" -> reads: "+dictionary.get(c).readerCounter+ " writes: "+
-                    dictionary.get(c).writeCounter+"\n";
+            buffer= buffer + c+" ->" + cmdRead.sumText(c)+cmdWrite.sumText(c)+"\n";
         }
 
-        return "Total reads: "+ totalreads+" Total writes: "+totalwrites+"\n"
+        return cmdRead.totalText()+" "+cmdWrite.totalText()+"\n"
                 + buffer;
 
     }

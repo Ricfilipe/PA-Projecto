@@ -1,7 +1,13 @@
 package ist.meic.pa.FunctionalProfiler;
 
+import javassist.CannotCompileException;
 import javassist.CtClass;
+import javassist.NotFoundException;
 
-public interface Command {
-    void execute(CtClass ctClass);
+public abstract class Command {
+    public abstract void  execute (CtClass ctClass) throws NotFoundException, CannotCompileException;
+
+    public abstract String totalText();
+
+    public abstract  String sumText(Class c);
 }

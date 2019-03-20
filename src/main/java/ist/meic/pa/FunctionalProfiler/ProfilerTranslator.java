@@ -17,65 +17,13 @@ public class ProfilerTranslator implements Translator {
         if(classname != Database.class.getName()) {
 
             CtClass ctClass = pool.get(classname);
-            makeCountable(ctClass);
-            makePrint(ctClass);
+
+           //TODO  Incorporar os commands
         }
     }
 
-    void makeCountable(CtClass ctClass)throws NotFoundException, CannotCompileException {
-        makeReadCounter(ctClass);
-        makeWriteCounter(ctClass);
-    }
 
-    void makeReadCounter(CtClass ctClass) throws NotFoundException, CannotCompileException {
-        final String template =
-                "{" +
-                        " Database.addReader($0.getClass());" +
-                        " $_=$0.%s;" +
-                        "}";
-        for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
-            ctMethod.instrument(new ExprEditor() {
-                public void edit(FieldAccess fa)
-                        throws CannotCompileException {
-                    if (fa.isReader()) {
-                        String name = fa.getFieldName();
-                        fa.replace(String.format(template,
-                                name));
-                    }
-                }
-            });
-        }
-    }
 
-    void makeWriteCounter(CtClass ctClass) throws NotFoundException, CannotCompileException {
-        final String template =
-                "{" +
-                        " Database.addWriter($0.getClass());" +
-                        " $0.%s = $1;" +
-                        "}";
-        for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
-            ctMethod.instrument(new ExprEditor() {
-                public void edit(FieldAccess fa)
-                        throws CannotCompileException {
-                    if (fa.isWriter()) {
-                        String name = fa.getFieldName();
-                        fa.replace(String.format(template,
-                                name));
-                    }
-                }
-            });
-        }
-
-    }
-
-    void makePrint(CtClass ctClass){
-        try{
-            CtMethod ctMethod = ctClass.getDeclaredMethods("main")[0];
-            ctMethod.insertAfter("System.out.println(Database.toText());");
-        }catch (Exception e){
-            //ignore
-        }
-    }
 
 }
 
