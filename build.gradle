@@ -6,6 +6,11 @@
  * User Manual available at https://docs.gradle.org/5.2.1/userguide/tutorial_java_projects.html
  */
 
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
@@ -28,6 +33,10 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+configurations{
+    jar.archiveName= 'functionalProfiler.jar'
 }
 
 // Define the main class for the application
