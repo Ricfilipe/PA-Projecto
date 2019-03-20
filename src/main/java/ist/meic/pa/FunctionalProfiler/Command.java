@@ -1,5 +1,7 @@
 package ist.meic.pa.FunctionalProfiler;
 
+import javassist.CtClass;
+
 public interface Command {
-    void execute();
+    void execute(CtClass ctClass);
 }
