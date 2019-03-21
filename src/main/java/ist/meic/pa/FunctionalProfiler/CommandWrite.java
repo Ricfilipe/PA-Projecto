@@ -1,3 +1,7 @@
+/*
+ * Class extending Command, responsible for adding the write counter function to the
+ * CompileTime Class write calls and counting the writes for the class that called the write.
+ */
 package ist.meic.pa.FunctionalProfiler;
 
 import javassist.CannotCompileException;
@@ -9,6 +13,7 @@ import javassist.expr.FieldAccess;
 
 public class CommandWrite extends Command {
 
+    // Adds the code that increments the write counter for the class
     public void execute(CtClass ctClass)throws NotFoundException, CannotCompileException {
         final String template =
                 "{" +
@@ -29,6 +34,7 @@ public class CommandWrite extends Command {
         }
     }
 
+    // Returns string with program's total writes
     @Override
     public String totalText() {
         int totalwrites=0;
@@ -39,6 +45,7 @@ public class CommandWrite extends Command {
         return "Total writes: "+totalwrites;
     }
 
+    // Returns string with class total writes
     @Override
     public String sumText(Class c) {
         return  " write: "+Database.dictionary.get(c).writeCounter;
