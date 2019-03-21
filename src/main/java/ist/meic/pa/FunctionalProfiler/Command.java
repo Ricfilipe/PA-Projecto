@@ -1,3 +1,7 @@
+/*
+ * Abstract class, implements the Command design pattern
+ */
+
 package ist.meic.pa.FunctionalProfiler;
 
 import javassist.CannotCompileException;
