@@ -1,3 +1,7 @@
+/*
+ * Class that keeps the records of CompileTime Classes,
+ * responsible for incrementing counters and printing the results.
+ */
 package ist.meic.pa.FunctionalProfiler;
 
 import java.util.HashMap;
@@ -17,9 +21,7 @@ public class Database {
 
         return cmdRead.totalText()+" "+cmdWrite.totalText()+"\n"
                 + buffer;
-
     }
-
 
     public static void addWriter(Class c){
         if(dictionary.get(c)==null){
@@ -27,7 +29,6 @@ public class Database {
         }
         dictionary.get(c).writeCounter++;
     }
-
 
     public static void addReader(Class c){
         if(dictionary.get(c)==null){
@@ -39,5 +40,4 @@ public class Database {
     public static void addClass(Class c){
         Database.dictionary.put(c,new Entry());
     }
-
 }
