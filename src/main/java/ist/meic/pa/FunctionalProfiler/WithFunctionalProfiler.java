@@ -9,10 +9,6 @@ import javassist.Loader;
 import javassist.Translator;
 
 public class WithFunctionalProfiler {
-    public String getGreeting() {
-        return "Hello world.";
-    }
-
     public static void main(String[] args) throws Throwable {
         if (args.length < 1) {
 

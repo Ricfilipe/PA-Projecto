@@ -32,9 +32,5 @@ public class ProfilerTranslator implements Translator {
 
         }
     }
-
-
-
-
 }
 
