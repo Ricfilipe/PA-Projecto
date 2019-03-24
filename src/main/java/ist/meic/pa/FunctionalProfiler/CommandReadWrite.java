@@ -25,7 +25,10 @@ public class CommandReadWrite extends Command{
             ctMethod.instrument(addCodeIfReader(templateRead));
         }
         for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
-            ctMethod.instrument(addCodeIfWriter(templateWrite));
+            ctMethod.instrument(addCodeIfWriter(templateWrite, null));
+        }
+        for (CtConstructor ctConstructor : ctClass.getDeclaredConstructors()) {
+            ctConstructor.instrument(addCodeIfWriter(templateWrite, ctClass.getName()));
         }
     }
 
@@ -44,11 +47,11 @@ public class CommandReadWrite extends Command{
         };
     }
 
-    public ExprEditor addCodeIfWriter(String template) {
+    public ExprEditor addCodeIfWriter(String template, String className) {
         return new ExprEditor() {
             public void edit(FieldAccess fa)
                     throws CannotCompileException {
-                if (fa.isWriter()) {
+                if (fa.isWriter() && !fa.getClassName().equals(className)) {
                     String name = fa.getFieldName();
                     fa.replace(String.format(template,
                             name));
