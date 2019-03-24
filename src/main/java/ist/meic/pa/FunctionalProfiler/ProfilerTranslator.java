@@ -22,15 +22,11 @@ public class ProfilerTranslator implements Translator {
                     return;
                 }
 
-                CommandRead cmdRead = new CommandRead();
-                CommandWrite cmdWrite = new CommandWrite();
+                CommandReadWrite cmdReadWrite = new CommandReadWrite();
                 CommandPrint cmdPrint = new CommandPrint();
 
                 // Adds reader counter function for each read in DeclaredMethods and Constructor of CompileTime Class
-                cmdRead.execute(ctClass);
-
-                // Adds writer counter function for each write in DeclaredMethods of CompileTime Class
-                cmdWrite.execute(ctClass);
+                cmdReadWrite.execute(ctClass);
 
                 // Adds a print function that prints the results of the writer and reader counter for the CompileTime Classes
                 cmdPrint.execute(ctClass);
