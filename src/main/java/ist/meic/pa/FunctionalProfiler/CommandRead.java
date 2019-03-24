@@ -8,6 +8,8 @@ import javassist.*;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
+import java.util.Set;
+
 
 public class CommandRead  extends Command{
 
@@ -45,10 +47,13 @@ public class CommandRead  extends Command{
     @Override
     public  String totalText() {
         int totalreads=0;
-        for(Class c: Database.dictionary.keySet()){
-            totalreads = totalreads + Database.dictionary.get(c).readerCounter;
 
-        }
+
+            for (Class c : Database.dictionary.keySet()) {
+                totalreads = totalreads + Database.dictionary.get(c).readerCounter;
+
+            }
+
         return "Total reads: "+totalreads;
     }
 

@@ -18,8 +18,7 @@ public class Tests {
 				// Should not happen
 				System.out.println("Test method does not exist: " + test);
 			}
-		}
-g	}
+		} }
 
 	static void test1() {
 		new Person();

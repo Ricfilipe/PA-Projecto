@@ -13,22 +13,21 @@ public class ProfilerTranslator implements Translator {
 
     @Override
     public void onLoad(ClassPool pool, String classname) throws NotFoundException, CannotCompileException {
-        if(classname != Database.class.getName()) {
+        if(classname != Database.class.getName() && classname!= CommandRead.class.getName() && classname !=CommandWrite.class.getName()) {
+                            CtClass ctClass = pool.get(classname);
 
-            CtClass ctClass = pool.get(classname);
+                CommandRead cmdRead = new CommandRead();
+                CommandWrite cmdWrite = new CommandWrite();
+                CommandPrint cmdPrint = new CommandPrint();
 
-            CommandRead cmdRead = new CommandRead();
-            CommandWrite cmdWrite = new CommandWrite();
-            CommandPrint cmdPrint = new CommandPrint();
+                // Adds reader counter function for each read in DeclaredMethods and Constructor of CompileTime Class
+                cmdRead.execute(ctClass);
 
-            // Adds reader counter function for each read in DeclaredMethods and Constructor of CompileTime Class
-            cmdRead.execute(ctClass);
+                // Adds writer counter function for each write in DeclaredMethods of CompileTime Class
+                cmdWrite.execute(ctClass);
 
-            // Adds writer counter function for each write in DeclaredMethods of CompileTime Class
-            cmdWrite.execute(ctClass);
-
-            // Adds a print function that prints the results of the writer and reader counter for the CompileTime Classes
-            cmdPrint.execute(ctClass);
+                // Adds a print function that prints the results of the writer and reader counter for the CompileTime Classes
+                cmdPrint.execute(ctClass);
 
         }
     }
