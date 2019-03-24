@@ -13,6 +13,15 @@ public class CommandReadWrite extends Command{
                         " Database.addWriter($0.getClass());" +
                         " $0.%s = $1;" +
                         "}";
+
+        final String templateWriteOnConstructor =
+                "{" +
+
+                        "if($0 != this){"+
+                        " Database.addWriter($0.getClass());" +
+                                "}" +
+                        " $0.%s = $1;" +
+                        "}";
         final String templateRead =
                 "{" +
                         " Database.addReader($0.getClass());" +
@@ -28,7 +37,7 @@ public class CommandReadWrite extends Command{
             ctMethod.instrument(addCodeIfWriter(templateWrite, null));
         }
         for (CtConstructor ctConstructor : ctClass.getDeclaredConstructors()) {
-            ctConstructor.instrument(addCodeIfWriter(templateWrite, ctClass.getName()));
+            ctConstructor.instrument(addCodeIfWriter(templateWriteOnConstructor, ctClass.getName()));
         }
     }
 
@@ -51,7 +60,7 @@ public class CommandReadWrite extends Command{
         return new ExprEditor() {
             public void edit(FieldAccess fa)
                     throws CannotCompileException {
-                if (fa.isWriter() && !fa.getClassName().equals(className)) {
+                if (fa.isWriter() ) {
                     String name = fa.getFieldName();
                     fa.replace(String.format(template,
                             name));
@@ -59,6 +68,8 @@ public class CommandReadWrite extends Command{
             }
         };
     }
+
+
 
     // Returns string with program's total writes
     @Override
