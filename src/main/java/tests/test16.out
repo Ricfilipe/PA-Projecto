@@ -1,0 +1,3 @@
+Total reads: 2 Total writes: 3
+class tests.Car -> reads: 1 writes: 1
+class tests.Car$Motor -> reads: 1 writes: 2

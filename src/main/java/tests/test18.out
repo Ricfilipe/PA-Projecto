@@ -1,0 +1,14 @@
+Total reads: 181 Total writes: 90
+class tests.Car -> reads: 2 writes: 2
+class tests.Car$Motor -> reads: 1 writes: 2
+class tests.MyFakeFileWriter -> reads: 1 writes: 1
+class tests.Person -> reads: 147 writes: 74
+class tests.Professor -> reads: 0 writes: 1
+class tests.Student -> reads: 9 writes: 5
+class tests.StudentPAva -> reads: 3 writes: 2
+class tests.sample0.FunctionalCounter -> reads: 3 writes: 0
+class tests.sample0.ImperativeCounter -> reads: 3 writes: 1
+class tests.sampleA.FunctionalCounter -> reads: 3 writes: 0
+class tests.sampleA.ImperativeCounter -> reads: 3 writes: 1
+class tests.sampleC.FunctionalCounter -> reads: 3 writes: 0
+class tests.sampleC.ImperativeCounter -> reads: 3 writes: 1

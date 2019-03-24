@@ -33,12 +33,18 @@ dependencies {
     // https://mvnrepository.com/artifact/org.javassist/javassist
     compile group: 'org.javassist', name: 'javassist', version: '3.24.1-GA'
 
-    // Use JUnit test framework
+    // Use JUnit tests framework
     testImplementation 'junit:junit:4.12'
 }
 
 configurations{
     jar.archiveName= 'functionalProfiler.jar'
+}
+
+run{
+    if (project.hasProperty("appArgs")) {
+        args Eval.me(appArgs)
+    }
 }
 
 // Define the main class for the application

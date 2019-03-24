@@ -1,0 +1,4 @@
+Total reads: 0 Total writes: 3
+class tests.Person -> reads: 0 writes: 1
+class tests.Professor -> reads: 0 writes: 1
+class tests.Student -> reads: 0 writes: 1

@@ -1,0 +1,7 @@
+Total reads: 18 Total writes: 3
+class tests.sample0.FunctionalCounter -> reads: 3 writes: 0
+class tests.sample0.ImperativeCounter -> reads: 3 writes: 1
+class tests.sampleA.FunctionalCounter -> reads: 3 writes: 0
+class tests.sampleA.ImperativeCounter -> reads: 3 writes: 1
+class tests.sampleC.FunctionalCounter -> reads: 3 writes: 0
+class tests.sampleC.ImperativeCounter -> reads: 3 writes: 1
