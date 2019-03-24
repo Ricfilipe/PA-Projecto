@@ -2,13 +2,13 @@
  * Class extending Command, responsible for adding the read/write counter function to the
  * CompileTime Class read/write calls and counting the reads/writes for the class that called the read/write.
  */
-package ist.meic.pa.FunctionalProfiler;
+package ist.meic.pa.FunctionalProfilerExtended;
 
 import javassist.*;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
-public class CommandReadWrite extends Command{
+public class CommandReadWrite extends Command {
 
     // Adds the code that increments the write/read counter for the class
     public void execute(CtClass ctClass)throws NotFoundException, CannotCompileException {
@@ -97,4 +97,6 @@ public class CommandReadWrite extends Command{
         return  " reads: " + Database.dictionary.get(c).readerCounter + " write: " + Database.dictionary.get(c).writeCounter;
     }
 
+    @Override
+    public void addFields() { return; }
 }
