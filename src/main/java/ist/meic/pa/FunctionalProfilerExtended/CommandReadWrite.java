@@ -80,12 +80,12 @@ public class CommandReadWrite extends Command {
     public String totalText() {
         int totalwrites=0;
         for(Class c: Database.dictionary.keySet()){
-            totalwrites = totalwrites + Database.dictionary.get(c).writeCounter;
+            totalwrites = totalwrites + Database.getWriteCounter(c);
         }
 
         int totalreads=0;
         for (Class c : Database.dictionary.keySet()) {
-            totalreads = totalreads + Database.dictionary.get(c).readerCounter;
+            totalreads = totalreads + Database.getReadCounter(c);
         }
         
         return "Total reads: " + totalreads + " Total writes: " + totalwrites;
@@ -94,9 +94,40 @@ public class CommandReadWrite extends Command {
     // Returns string with class total writes/reads
     @Override
     public String sumText(Class c) {
-        return  " reads: " + Database.dictionary.get(c).readerCounter + " write: " + Database.dictionary.get(c).writeCounter;
+        return  " reads: " + Database.getReadCounter(c) + " write: " + Database.getWriteCounter(c);
     }
 
     @Override
-    public void addFields() { return; }
+    public void addFields(ClassPool pool) throws NotFoundException, CannotCompileException{
+        CtClass entry = ClassPool.getDefault().get("Entry");
+
+        CtField readerCounter = CtField.make("public readerCounter = 0;", entry);
+        entry.addField(readerCounter);
+
+        CtField writeCounter = CtField.make("public writeCounter = 0;", entry);
+        entry.addField(writeCounter);
+    }
+
+    @Override
+    public void addMethods(ClassPool pool) throws NotFoundException, CannotCompileException{
+        CtClass database = ClassPool.getDefault().get("Database");
+        CtMethod addWriter = CtNewMethod.make(
+                "public static void addWriter(Class c) {" +
+                        "if (dictionary.get(c) == null){" +
+                        "addClass(c);}" +
+                        "dictionary.get(c).writeCounter++; }", database);
+        database.addMethod(addWriter);
+
+        CtMethod addReader = CtNewMethod.make(
+                "public static void addReader(Class c) {" +
+                        "if (dictionary.get(c) == null){" +
+                        "addClass(c);}" +
+                        "dictionary.get(c).readerCounter++; }", database);
+        database.addMethod(addReader);
+
+        CtMethod addClass = CtNewMethod.make(
+                    "public static void addClass(Class c) {" +
+                        "Database.dictionary.put(c,new Entry()); }", database);
+        database.addMethod(addClass);
+    }
 }

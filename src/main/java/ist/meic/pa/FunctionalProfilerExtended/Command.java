@@ -7,6 +7,7 @@ package ist.meic.pa.FunctionalProfilerExtended;
 import javassist.CannotCompileException;
 import javassist.CtClass;
 import javassist.NotFoundException;
+import javassist.ClassPool;
 
 @NotIntersect
 public abstract class Command {
@@ -16,5 +17,7 @@ public abstract class Command {
 
     public abstract  String sumText(Class c);
 
-    public abstract void addFields();
+    public abstract void addFields(ClassPool pool) throws NotFoundException, CannotCompileException;
+
+    public abstract void addMethods(ClassPool pool) throws NotFoundException, CannotCompileException;
 }

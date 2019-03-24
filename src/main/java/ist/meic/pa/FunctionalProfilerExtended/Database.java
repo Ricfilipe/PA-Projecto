@@ -23,21 +23,11 @@ public class Database {
                 + buffer;
     }
 
-    public static void addWriter(Class c){
-        if(dictionary.get(c)==null){
-            addClass(c);
-        }
-        dictionary.get(c).writeCounter++;
+    public static int getReadCounter(Class c) {
+        return dictionary.get(c);
     }
 
-    public static void addReader(Class c){
-        if(dictionary.get(c)==null){
-            addClass(c);
-        }
-        dictionary.get(c).readerCounter++;
-    }
-
-    public static void addClass(Class c){
-        Database.dictionary.put(c,new Entry());
+    public static int getWriteCounter(Class c) {
+        return dictionary.get(c);
     }
 }

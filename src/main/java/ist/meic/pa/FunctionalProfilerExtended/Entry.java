@@ -3,7 +3,4 @@
  */
 package ist.meic.pa.FunctionalProfilerExtended;
 
-public class Entry {
-    public int readerCounter;
-    public int writeCounter;
-}
+public class Entry {}

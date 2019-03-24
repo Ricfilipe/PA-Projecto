@@ -7,6 +7,7 @@ package ist.meic.pa.FunctionalProfilerExtended;
 import javassist.ClassPool;
 import javassist.Loader;
 import javassist.Translator;
+import org.omg.CORBA.COMM_FAILURE;
 
 import java.text.Annotation;
 
@@ -14,7 +15,8 @@ public class WithFunctionalProfiler {
     public static void main(String[] args) throws Throwable {
         if (args.length < 1) {
 
-        } else {
+        }
+        else {
             String[] realArgs;
             if(args.length==1){
                 realArgs=args[0].split(" ");
@@ -22,14 +24,19 @@ public class WithFunctionalProfiler {
                 realArgs=args;
             }
             Object an = Class.forName(realArgs[0]).getAnnotation(NotIntersect.class);
-            Translator translator = null;
+            Translator translator;
+            ClassPool pool = ClassPool.getDefault();
+            Command cmd;
             if(an == null) {
                 translator = new ProfilerTranslator();
+                cmd = new CommandReadWrite();
             }
             else {
                 translator = new ProfilerTranslator(((Profiler)an).value());
+                cmd = (Command)Class.forName(((Profiler)an).value()).newInstance();
             }
-            ClassPool pool = ClassPool.getDefault();
+            cmd.addFields(pool);
+            cmd.addMethods(pool);
             pool.importPackage("ist.meic.pa.FunctionalProfiler");
             Loader classLoader = new Loader();
             classLoader.addTranslator(pool, translator);
@@ -38,6 +45,6 @@ public class WithFunctionalProfiler {
             classLoader.run(realArgs[0], restArgs);
 
         }
-        }
     }
+}
 

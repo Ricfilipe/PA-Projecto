@@ -4,10 +4,7 @@
  */
 package ist.meic.pa.FunctionalProfilerExtended;
 
-import javassist.CannotCompileException;
-import javassist.CtClass;
-import javassist.CtMethod;
-import javassist.NotFoundException;
+import javassist.*;
 
 public class CommandPrint extends Command {
     @Override
@@ -31,5 +28,8 @@ public class CommandPrint extends Command {
     }
 
     @Override
-    public void addFields() { return; }
+    public void addFields(ClassPool pool) { return; }
+
+    @Override
+    public void addMethods(ClassPool pool) { return; }
 }

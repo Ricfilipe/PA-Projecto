@@ -1,4 +1,6 @@
 package tests;
+import ist.meic.pa.FunctionalProfilerExtended.Profiler;
+
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.io.*;
