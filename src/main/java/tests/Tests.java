@@ -113,7 +113,7 @@ public class Tests {
 	static void test18() {
 		for (int i = 1; i < 18; i++) {
 			try {
-				Method m = Tests.class.getDeclaredMethod("tests" + i);
+				Method m = Tests.class.getDeclaredMethod("test" + i);
 				m.invoke(null);	
 			} catch(InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
 				// Should not happen
