@@ -8,6 +8,9 @@ import javassist.*;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class CommandReadWrite extends Command {
 
     // Adds the code that increments the write/read counter for the class
@@ -77,15 +80,18 @@ public class CommandReadWrite extends Command {
 
     // Returns string with program's total writes/reads
     @Override
-    public String totalText() {
+    public String totalText() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException{
+        Class db = Database.class;
         int totalwrites=0;
         for(Class c: Database.dictionary.keySet()){
-            totalwrites = totalwrites + Database.getWriteCounter(c);
+            Method getWriterCounter = db.getDeclaredMethod("getWriterCounter", c);
+            totalwrites = totalwrites + (int)getWriterCounter.invoke(null, c);
         }
 
         int totalreads=0;
         for (Class c : Database.dictionary.keySet()) {
-            totalreads = totalreads + Database.getReadCounter(c);
+            Method getReaderCounter = db.getDeclaredMethod("getReaderCounter", c);
+            totalreads = totalreads + (int)getReaderCounter.invoke(null, c);
         }
         
         return "Total reads: " + totalreads + " Total writes: " + totalwrites;
@@ -93,8 +99,11 @@ public class CommandReadWrite extends Command {
 
     // Returns string with class total writes/reads
     @Override
-    public String sumText(Class c) {
-        return  " reads: " + Database.getReadCounter(c) + " write: " + Database.getWriteCounter(c);
+    public String sumText(Class c) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        Class db = Database.class;
+        Method getReaderCounter = db.getDeclaredMethod("getReaderCounter", c);
+        Method getWriterCounter = db.getDeclaredMethod("getWriterCounter", c);
+        return  " reads: " + getReaderCounter.invoke(null, c) + " write: " + getWriterCounter.invoke(null, c);
     }
 
     @Override
@@ -126,8 +135,18 @@ public class CommandReadWrite extends Command {
         database.addMethod(addReader);
 
         CtMethod addClass = CtNewMethod.make(
-                    "public static void addClass(Class c) {" +
+                "public static void addClass(Class c) {" +
                         "Database.dictionary.put(c,new Entry()); }", database);
         database.addMethod(addClass);
+
+        CtMethod getReadCounter = CtNewMethod.make(
+                "public static int getReadCounter(Class c) {" +
+                        "return dictionary.get(c).readerCounter; }", database);
+        database.addMethod(getReadCounter);
+
+        CtMethod getWriteCounter = CtNewMethod.make(
+                "public static int getWriteCounter(Class c) {" +
+                        "return dictionary.get(c).writeCounter; }", database);
+        database.addMethod(getWriteCounter);
     }
 }

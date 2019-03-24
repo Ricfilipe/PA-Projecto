@@ -6,12 +6,14 @@ package ist.meic.pa.FunctionalProfilerExtended;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.lang.reflect.InvocationTargetException;
+
 
 @NotIntersect
 public class Database {
     public static Map<Class, Entry> dictionary = new HashMap<>();
 
-    public static String toText(){
+    public static String toText() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException{
         CommandReadWrite cmdReadWrite= new CommandReadWrite();
 
         String buffer= "";
@@ -21,13 +23,5 @@ public class Database {
 
         return cmdReadWrite.totalText() + "\n"
                 + buffer;
-    }
-
-    public static int getReadCounter(Class c) {
-        return dictionary.get(c);
-    }
-
-    public static int getWriteCounter(Class c) {
-        return dictionary.get(c);
     }
 }
