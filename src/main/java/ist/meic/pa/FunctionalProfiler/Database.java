@@ -11,15 +11,14 @@ public class Database {
     public static Map<Class,Entry> dictionary = new HashMap<>();
 
     public static String toText(){
-        CommandRead cmdRead= new CommandRead();
-        CommandWrite cmdWrite= new CommandWrite();
+        CommandReadWrite cmdReadWrite= new CommandReadWrite();
 
         String buffer= "";
         for(Class c: dictionary.keySet()){
-            buffer= buffer + c+" ->" + cmdRead.sumText(c)+cmdWrite.sumText(c)+"\n";
+            buffer= buffer + c+" ->" + cmdReadWrite.sumText(c) + "\n";
         }
 
-        return cmdRead.totalText()+" "+cmdWrite.totalText()+"\n"
+        return cmdReadWrite.totalText() + "\n"
                 + buffer;
     }
 
