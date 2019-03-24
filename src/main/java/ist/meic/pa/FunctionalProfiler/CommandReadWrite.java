@@ -1,3 +1,7 @@
+/*
+ * Class extending Command, responsible for adding the read/write counter function to the
+ * CompileTime Class read/write calls and counting the reads/writes for the class that called the read/write.
+ */
 package ist.meic.pa.FunctionalProfiler;
 
 import javassist.*;
@@ -6,7 +10,7 @@ import javassist.expr.FieldAccess;
 
 public class CommandReadWrite extends Command{
 
-    // Adds the code that increments the write counter for the class
+    // Adds the code that increments the write/read counter for the class
     public void execute(CtClass ctClass)throws NotFoundException, CannotCompileException {
         final String templateWrite =
                 "{" +
@@ -56,6 +60,8 @@ public class CommandReadWrite extends Command{
         };
     }
 
+    // Returns the Expression Editor with the information if the accessed field was a write or not
+    // If it was and was not a self write in constructor add code, otherwise do nothing
     public ExprEditor addCodeIfWriter(String template, String className) {
         return new ExprEditor() {
             public void edit(FieldAccess fa)
@@ -69,28 +75,23 @@ public class CommandReadWrite extends Command{
         };
     }
 
-
-
-    // Returns string with program's total writes
+    // Returns string with program's total writes/reads
     @Override
     public String totalText() {
         int totalwrites=0;
         for(Class c: Database.dictionary.keySet()){
             totalwrites = totalwrites + Database.dictionary.get(c).writeCounter;
-
         }
+
         int totalreads=0;
-
-
         for (Class c : Database.dictionary.keySet()) {
             totalreads = totalreads + Database.dictionary.get(c).readerCounter;
-
         }
-
+        
         return "Total reads: " + totalreads + " Total writes: " + totalwrites;
     }
 
-    // Returns string with class total writes
+    // Returns string with class total writes/reads
     @Override
     public String sumText(Class c) {
         return  " reads: " + Database.dictionary.get(c).readerCounter + " write: " + Database.dictionary.get(c).writeCounter;
