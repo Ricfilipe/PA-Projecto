@@ -13,9 +13,11 @@ public class ProfilerTranslator implements Translator {
 
     @Override
     public void onLoad(ClassPool pool, String classname) throws NotFoundException, CannotCompileException {
-        if(classname != Database.class.getName() && classname!= CommandRead.class.getName() && classname !=CommandWrite.class.getName()) {
-                            CtClass ctClass = pool.get(classname);
-
+                          CtClass ctClass = pool.get(classname);
+                try {
+                    ctClass.getAnnotation(NotIntersect.class);
+                    return;
+                }catch (Exception e){}
                 CommandRead cmdRead = new CommandRead();
                 CommandWrite cmdWrite = new CommandWrite();
                 CommandPrint cmdPrint = new CommandPrint();
@@ -31,5 +33,5 @@ public class ProfilerTranslator implements Translator {
 
         }
     }
-}
+
 
