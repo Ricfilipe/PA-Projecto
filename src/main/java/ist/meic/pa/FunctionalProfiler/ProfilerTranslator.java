@@ -5,6 +5,8 @@ package ist.meic.pa.FunctionalProfiler;
 
 import javassist.*;
 
+import java.lang.annotation.Annotation;
+
 public class ProfilerTranslator implements Translator {
     @Override
     public void start(ClassPool pool) throws NotFoundException, CannotCompileException {
@@ -15,9 +17,11 @@ public class ProfilerTranslator implements Translator {
     public void onLoad(ClassPool pool, String classname) throws NotFoundException, CannotCompileException {
                           CtClass ctClass = pool.get(classname);
                 try {
-                    ctClass.getAnnotation(NotIntersect.class);
+                    Object an = ctClass.getAnnotation(NotIntersect.class);
+                if(an != null){
                     return;
-                }catch (Exception e){}
+                }
+
                 CommandRead cmdRead = new CommandRead();
                 CommandWrite cmdWrite = new CommandWrite();
                 CommandPrint cmdPrint = new CommandPrint();
@@ -30,7 +34,7 @@ public class ProfilerTranslator implements Translator {
 
                 // Adds a print function that prints the results of the writer and reader counter for the CompileTime Classes
                 cmdPrint.execute(ctClass);
-
+                }catch (Exception e){}
         }
     }
 
