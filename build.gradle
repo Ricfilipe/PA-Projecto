@@ -41,13 +41,8 @@ configurations{
     jar.archiveName= 'functionalProfiler.jar'
 }
 
-run{
-    if (project.hasProperty("appArgs")) {
-        args Eval.me(appArgs)
-    }
-}
+
 
 // Define the main class for the application
 mainClassName = 'ist.meic.pa.FunctionalProfiler.WithFunctionalProfiler'
-
 
