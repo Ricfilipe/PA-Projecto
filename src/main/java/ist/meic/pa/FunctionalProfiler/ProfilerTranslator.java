@@ -13,6 +13,9 @@ public class ProfilerTranslator implements Translator {
 
     }
 
+
+
+// TODO Corrigir 18;
     @Override
     public void onLoad(ClassPool pool, String classname) throws NotFoundException, CannotCompileException {
                           CtClass ctClass = pool.get(classname);
