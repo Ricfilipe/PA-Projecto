@@ -37,7 +37,7 @@ public class WithFunctionalProfiler {
             }
             cmd.addFields(pool);
             cmd.addMethods(pool);
-            pool.importPackage("ist.meic.pa.FunctionalProfiler");
+            pool.importPackage("ist.meic.pa.FunctionalProfilerExtended");
             Loader classLoader = new Loader();
             classLoader.addTranslator(pool, translator);
             String[] restArgs = new String[realArgs.length - 1];

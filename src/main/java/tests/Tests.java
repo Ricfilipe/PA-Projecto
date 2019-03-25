@@ -14,8 +14,9 @@ public class Tests {
 		
 		for (String test : args) {
 			try {
+
 				Method m = Tests.class.getDeclaredMethod(test);
-				m.invoke(null);	
+				m.invoke(null);
 			} catch(InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
 				// Should not happen
 				System.out.println("Test method does not exist: " + test);

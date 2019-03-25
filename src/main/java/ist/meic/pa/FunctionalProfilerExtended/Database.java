@@ -4,6 +4,7 @@
  */
 package ist.meic.pa.FunctionalProfilerExtended;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 import java.lang.reflect.InvocationTargetException;
@@ -24,4 +25,12 @@ public class Database {
         return cmdReadWrite.totalText() + "\n"
                 + buffer;
     }
+
+    public static void addClass(Class c) {
+        dictionary.put(c,new Entry()); }
+
+        public static Field getField(String c, String fieldName) throws ClassNotFoundException, NoSuchFieldException {
+            Class klazz = Class.forName(c);
+            return klazz.getField(fieldName);
+        }
 }
