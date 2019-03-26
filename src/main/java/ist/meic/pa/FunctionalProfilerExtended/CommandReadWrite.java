@@ -1,13 +1,13 @@
 /*
- * Class extending Command, responsible for adding the read/write counter function to the
- * CompileTime Class read/write calls and counting the reads/writes for the class that called the read/write.
+ * Class extending Command, responsible for adding methods to the Database class, fields to the Entry class,
+ * the read/write counter function to the CompileTime Class read/write calls and counting the reads/writes
+ * for the class that called the read/write.
  */
 package ist.meic.pa.FunctionalProfilerExtended;
 
 import javassist.*;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -106,6 +106,7 @@ public class CommandReadWrite extends Command {
         return  " reads: " + getReaderCounter.invoke(null, c) + " write: " + getWriterCounter.invoke(null, c);
     }
 
+    // Adds the fields read and write counters to the Entry class
     @Override
     public void addFields(ClassPool pool) throws NotFoundException, CannotCompileException{
         CtClass entry = ClassPool.getDefault().get(Entry.class.getName());
@@ -117,12 +118,10 @@ public class CommandReadWrite extends Command {
         entry.addField(writeCounter);
     }
 
+    // Adds the addWriter, addReader methods to the Database class and the both the get counter methods
     @Override
     public void addMethods(ClassPool pool) throws NotFoundException, CannotCompileException{
         CtClass database = ClassPool.getDefault().get(Database.class.getName());
-
-
-
 
         CtMethod addWriter = CtNewMethod.make(
                 "public static void addWriter(Class c) {" +
