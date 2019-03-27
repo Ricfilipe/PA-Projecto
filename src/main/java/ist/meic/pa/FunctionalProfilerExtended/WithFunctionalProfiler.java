@@ -23,7 +23,7 @@ public class WithFunctionalProfiler {
                 realArgs=args;
             }
 
-            Object an = Class.forName(realArgs[0]).getAnnotation(NotIntersect.class);
+            Object an = Class.forName(realArgs[0]).getAnnotation(Profiler.class);
             Translator translator;
             ClassPool pool = ClassPool.getDefault();
             Command cmd;
@@ -31,9 +31,16 @@ public class WithFunctionalProfiler {
             if (an == null) {
                 translator = new ProfilerTranslator();
                 cmd = new CommandReadWrite();
+                System.out.println("teste2");
             } else {
-                translator = new ProfilerTranslator(((Profiler)an).value());
-                cmd = (Command)Class.forName(((Profiler)an).value()).newInstance();
+                String strCmd =((Profiler)an).value();
+                if(strCmd.contains(".")){
+                    cmd = (Command) Class.forName(strCmd).newInstance();
+                }else {
+                    cmd = (Command) Class.forName(Command.class.getCanonicalName() + strCmd).newInstance();
+                }
+                translator = new ProfilerTranslator(cmd);
+
             }
 
             cmd.addFields(pool);

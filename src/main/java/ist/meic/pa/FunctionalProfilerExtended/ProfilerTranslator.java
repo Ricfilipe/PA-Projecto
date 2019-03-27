@@ -15,8 +15,8 @@ public class ProfilerTranslator implements Translator {
     }
 
     // Command specified with annotation
-    public ProfilerTranslator(String value) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        this.cmd = (Command)Class.forName("Command" + value).newInstance();
+    public ProfilerTranslator(Command cmd) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        this.cmd = cmd;
     }
 
     @Override
