@@ -28,7 +28,6 @@ public class WithFunctionalProfiler {
             if (an == null) {
                 translator = new ProfilerTranslator();
                 cmd = new CommandReadWrite();
-                System.out.println("teste2");
             } else {
                 String strCmd =((Profiler)an).value();
                 if(strCmd.contains(".")){
@@ -37,7 +36,6 @@ public class WithFunctionalProfiler {
                     cmd = (Command) Class.forName(Command.class.getName() + strCmd).newInstance();
                 }
                 translator = new ProfilerTranslator(cmd);
-
             }
 
             cmd.addFields(pool);
