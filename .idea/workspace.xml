@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3977f22d-1af3-4634-8f90-6e146cbb2d8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/Tests.java" afterDir="false" />
@@ -88,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -97,8 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="47" />
+            <state relative-caret-position="85">
+              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="48" column="95" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -106,8 +119,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="374">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+              <folding>
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,52 +142,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Entry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="276">
+              <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Profiler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tests/Tests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+            <state relative-caret-position="142">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#680#681#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#782#783#0" expanded="true" />
+                <element signature="e#819#820#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#881#882#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="e#1279#1280#0" expanded="true" />
+                <element signature="e#1310#1311#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#1383#1384#0" expanded="true" />
+                <element signature="e#1408#1409#0" expanded="true" />
+                <element signature="e#1428#1429#0" expanded="true" />
+                <element signature="e#2016#2017#0" expanded="true" />
+                <element signature="e#2044#2045#0" expanded="true" />
+                <element signature="e#2069#2070#0" expanded="true" />
+                <element signature="e#2095#2096#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,8 +184,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+            <state relative-caret-position="-391">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandReadWrite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -217,15 +235,17 @@
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandReadWrite.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/NotIntersect.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Entry.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java" />
         <option value="$PROJECT_DIR$/src/main/java/tests/Tests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java" />
       </list>
     </option>
   </component>
@@ -299,12 +319,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PA-Projecto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PA-Projecto" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -314,7 +328,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553678980527" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553690105221" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PA-JAexemplo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -323,6 +337,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ist.meic.pa.FunctionalProfilerExtended" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Daniel\Documents\IST\PAva\projecto\src\main\java\ist\meic\pa\FunctionalProfilerExtended" />
     </key>
@@ -340,7 +357,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Gradle.PA-Projecto [run --args=&quot;tests.Tests test18&quot;]">
-    <configuration name="PA-Projecto [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PA-Projecto [run --args=&quot;tests.Tests test11&quot;]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -351,7 +368,8 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="run" />
+            <option value="--args=&quot;tests.Tests test11&quot;" />
           </list>
         </option>
         <option name="vmOptions" value="" />
@@ -400,26 +418,6 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PA-Projecto [run --args=&quot;tests.Tests test1&quot;]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-            <option value="--args=&quot;tests.Tests test1&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="PA-Projecto [run --args=&quot;tests.Tests test2&quot;]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -440,20 +438,40 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="PA-Projecto [run --args=&quot;tests.Tests test9&quot;]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+            <option value="--args=&quot;tests.Tests test9&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test1&quot;]" />
-      <item itemvalue="Gradle.PA-Projecto [build]" />
       <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test1&quot; -X]" />
       <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test18&quot;]" />
       <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test2&quot;]" />
+      <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test11&quot;]" />
+      <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test9&quot;]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test9&quot;]" />
+        <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test11&quot;]" />
         <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test18&quot;]" />
         <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test2&quot;]" />
         <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test1&quot; -X]" />
-        <item itemvalue="Gradle.PA-Projecto [build]" />
-        <item itemvalue="Gradle.PA-Projecto [run --args=&quot;tests.Tests test1&quot;]" />
       </list>
     </recent_temporary>
   </component>
@@ -473,7 +491,7 @@
       <workItem from="1553425376938" duration="6582000" />
       <workItem from="1553479098966" duration="555000" />
       <workItem from="1553522961444" duration="3930000" />
-      <workItem from="1553677419088" duration="1561000" />
+      <workItem from="1553677419088" duration="12519000" />
     </task>
     <task id="LOCAL-00001" summary="update gradle">
       <created>1553075242628</created>
@@ -493,7 +511,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27011000" />
+    <option name="totallyTimeSpent" value="37969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,11 +531,11 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" id="Structure" order="5" sideWeight="0.5042194" side_tool="true" visible="true" weight="0.2033557" />
+      <window_info id="Structure" order="5" sideWeight="0.5042194" side_tool="true" visible="true" weight="0.2033557" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -634,27 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandReadWrite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.24.1-GA/7c80ce6145aa19d7219dc6406286061701db5525/javassist-3.24.1-GA-sources.jar!/javassist/ClassPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="421" selection-start-line="421" selection-end-line="421" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.24.1-GA/7c80ce6145aa19d7219dc6406286061701db5525/javassist-3.24.1-GA-sources.jar!/javassist/CtField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="233" column="16" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -693,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -727,6 +721,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/CommandReadWrite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.24.1-GA/7c80ce6145aa19d7219dc6406286061701db5525/javassist-3.24.1-GA-sources.jar!/javassist/CtField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tests/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#1383#1384#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#2016#2017#0" expanded="true" />
+            <element signature="e#2044#2045#0" expanded="true" />
+            <element signature="e#2069#2070#0" expanded="true" />
+            <element signature="e#2095#2096#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -737,41 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tests/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        <state relative-caret-position="187">
+          <caret line="48" column="95" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -779,16 +830,16 @@
   <component name="gradleExecuteTaskHistory">
     <option value="$PROJECT_DIR$" />
     <option value="run --args=&quot;tests.Tests test18&quot;" />
+    <option value="run --args=&quot;tests.Tests test9&quot;" />
+    <option value="run --args=&quot;tests.Tests test11&quot;" />
     <option value="run --args=&quot;tests.Tests test1&quot;" />
     <option value="run --args=&quot;tests.Tests test2&quot;" />
     <option value="run --args=&quot;tests.Tests test1&quot; -Xlint:unchecked" />
     <option value="build" />
     <option value="run --args=&quot;test18&quot;" />
     <option value="run --args=&quot;tests.Tests test8&quot;" />
-    <option value="run --args=&quot;tests.Tests test9&quot;" />
     <option value="run --args=&quot;tests.Tests test16&quot;" />
     <option value="run --args=&quot;tests.Tests test10&quot;" />
-    <option value="run --args=&quot;tests.Tests test11&quot;" />
     <option value="run --args=&quot;tests.Tests test12&quot;" />
     <option value="run --args=&quot;tests.Tests test13&quot;" />
     <option value="run --args=&quot;tests.Tests test14&quot;" />

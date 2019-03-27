@@ -36,7 +36,7 @@ public class ProfilerTranslator implements Translator {
             // Executes command specified in annotation
             cmd.execute(ctClass);
 
-            CommandPrint cmdPrint = new CommandPrint();
+            CommandPrint cmdPrint = new CommandPrint(cmd);
             // Adds a print function that prints the results of the writer and reader counter for the CompileTime Classes
             cmdPrint.execute(ctClass);
         } catch (Exception e) {}

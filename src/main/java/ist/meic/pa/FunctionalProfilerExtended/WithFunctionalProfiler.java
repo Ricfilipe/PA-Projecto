@@ -7,9 +7,6 @@ package ist.meic.pa.FunctionalProfilerExtended;
 import javassist.ClassPool;
 import javassist.Loader;
 import javassist.Translator;
-import org.omg.CORBA.COMM_FAILURE;
-
-import java.text.Annotation;
 
 public class WithFunctionalProfiler {
     public static void main(String[] args) throws Throwable {
@@ -37,7 +34,7 @@ public class WithFunctionalProfiler {
                 if(strCmd.contains(".")){
                     cmd = (Command) Class.forName(strCmd).newInstance();
                 }else {
-                    cmd = (Command) Class.forName(Command.class.getCanonicalName() + strCmd).newInstance();
+                    cmd = (Command) Class.forName(Command.class.getName() + strCmd).newInstance();
                 }
                 translator = new ProfilerTranslator(cmd);
 

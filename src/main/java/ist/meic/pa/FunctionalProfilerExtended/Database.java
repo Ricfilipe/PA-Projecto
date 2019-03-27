@@ -13,15 +13,16 @@ import java.lang.reflect.InvocationTargetException;
 public class Database {
     public static Map<Class, Entry> dictionary = new HashMap<>();
 
-    public static String toText() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException{
-        CommandReadWrite cmdReadWrite= new CommandReadWrite();
+    public static String toText(String cmdString) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, InstantiationException {
+        Command cmd = (Command) Class.forName(cmdString).newInstance();
 
         String buffer= "";
+
         for(Class c: dictionary.keySet()){
-            buffer= buffer + c+" ->" + cmdReadWrite.sumText(c) + "\n";
+            buffer= buffer + c+" ->" + cmd.sumText(c) + "\n";
         }
 
-        return cmdReadWrite.totalText() + "\n"
+        return cmd.totalText() + "\n"
                 + buffer;
     }
 

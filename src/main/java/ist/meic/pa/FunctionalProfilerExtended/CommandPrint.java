@@ -7,11 +7,16 @@ package ist.meic.pa.FunctionalProfilerExtended;
 import javassist.*;
 
 public class CommandPrint extends Command {
+    Command cmd ;
+
+    public CommandPrint (Command cmd){
+        this.cmd = cmd;
+    }
     @Override
     public void execute(CtClass ctClass) throws NotFoundException, CannotCompileException {
         try{
             CtMethod ctMethod = ctClass.getDeclaredMethods("main")[0];
-            ctMethod.insertAfter("System.out.println(Database.toText());");
+            ctMethod.insertAfter("System.out.print(Database.toText(\""+cmd.getClass().getName()+"\"));");
         }catch (Exception e){
             //ignore
         }
@@ -19,12 +24,12 @@ public class CommandPrint extends Command {
 
     @Override
     public String totalText() {
-        return null;
+        return "";
     }
 
     @Override
     public String sumText(Class c) {
-        return null;
+        return "";
     }
 
     @Override
