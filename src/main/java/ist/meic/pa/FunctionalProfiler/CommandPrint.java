@@ -14,7 +14,7 @@ public class CommandPrint extends Command {
     public void execute(CtClass ctClass) throws NotFoundException, CannotCompileException {
         try{
             CtMethod ctMethod = ctClass.getDeclaredMethods("main")[0];
-            ctMethod.insertAfter("System.out.println(Database.toText());");
+            ctMethod.insertAfter("System.out.print(Database.toText());");
         }catch (Exception e){
             //ignore
         }

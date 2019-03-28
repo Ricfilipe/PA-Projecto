@@ -4,22 +4,35 @@
  */
 package ist.meic.pa.FunctionalProfiler;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @NotIntersect
 public class Database {
+
+    public static class ClassComparator  implements Comparator<Class> {
+        public int compare(Class obj1, Class obj2) {
+            String s1 = obj1.getName();
+            String s2 = obj2.getName();
+
+            return s1.compareTo(s2);
+        }
+    }
+
     public static Map<Class,Entry> dictionary = new HashMap<>();
 
     public static String toText(){
-        CommandReadWrite cmdReadWrite= new CommandReadWrite();
+        CommandReadWrite cmd= new CommandReadWrite();
 
         String buffer= "";
-        for(Class c: dictionary.keySet()){
-            buffer= buffer + c+" ->" + cmdReadWrite.sumText(c) + "\n";
+
+        List<Class> sorted = new ArrayList<>(dictionary.keySet());
+        Collections.sort(sorted, new ist.meic.pa.FunctionalProfilerExtended.Database.ClassComparator());
+
+        for(Class c: sorted){
+            buffer=  buffer + "\n"+ c+" ->" + cmd.sumText(c) ;
         }
 
-        return cmdReadWrite.totalText() + "\n"
+        return cmd.totalText()
                 + buffer;
     }
 
