@@ -15,15 +15,15 @@ public class ProfilerTranslator implements Translator {
     }
 
     // Command specified with annotation
-    public ProfilerTranslator(Command cmd) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public ProfilerTranslator(Command cmd)  {
         this.cmd = cmd;
     }
 
     @Override
-    public void start(ClassPool pool) throws NotFoundException, CannotCompileException { }
+    public void start(ClassPool pool)  { }
 
     @Override
-    public void onLoad(ClassPool pool, String classname) throws NotFoundException, CannotCompileException {
+    public void onLoad(ClassPool pool, String classname) throws NotFoundException {
         CtClass ctClass = pool.get(classname);
 
         // If annotation NotIntersect is present, do nothing, otherwise execute remainder of method

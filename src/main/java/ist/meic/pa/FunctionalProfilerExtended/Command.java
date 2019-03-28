@@ -32,3 +32,4 @@ public abstract class Command {
 
     public abstract CtMethod[] addMethods(CtClass database) throws NotFoundException, CannotCompileException;
 }
+

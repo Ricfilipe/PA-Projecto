@@ -22,7 +22,9 @@ public class Database {
 
     public static Map<Class, Entry> dictionary = new HashMap<>();
 
-    public static String toText(String cmdString) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, InstantiationException {
+    public static String toText(String cmdString) throws NoSuchMethodException, IllegalAccessException,
+            InvocationTargetException, ClassNotFoundException, InstantiationException {
+
         Command cmd = (Command) Class.forName(cmdString).newInstance();
 
         String buffer= "";
