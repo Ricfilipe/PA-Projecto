@@ -42,8 +42,8 @@ public class Database {
         dictionary.put(c,new Entry());
     }
 
-    public static Field getField(String c, String fieldName) throws ClassNotFoundException, NoSuchFieldException {
-        Class klazz = Class.forName(c);
+    public static Field getField( String fieldName) throws ClassNotFoundException, NoSuchFieldException {
+        Class klazz = Class.forName(Entry.class.getName());
         return klazz.getField(fieldName);
     }
 }

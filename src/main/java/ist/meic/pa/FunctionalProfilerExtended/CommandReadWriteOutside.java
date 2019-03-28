@@ -106,7 +106,7 @@ public class CommandReadWriteOutside extends Command {
 
     // Adds the addWriter, addReader methods to the Database class and the both the get counter methods
     @Override
-    public CtMethod[] addMethods(CtClass database, String entryClassName) throws NotFoundException, CannotCompileException{
+    public CtMethod[] addMethods(CtClass database) throws NotFoundException, CannotCompileException{
 
         CtMethod[]  methods = new CtMethod[4];
         methods[0] = CtNewMethod.make(
@@ -114,8 +114,8 @@ public class CommandReadWriteOutside extends Command {
                         "if ("+getEntryfromDatabase("c")+" == null){" +
                         addClassToDatabase("c")+";" +
                         "}" +
-                        "java.lang.reflect.Field fieldR = getField(\""+entryClassName+"\",\"dicRead\"); " +
-                        "java.lang.reflect.Field fieldW = getField(\""+entryClassName+"\",\"dicWrite\");" +
+                        "java.lang.reflect.Field fieldR = "+getField("dicRead")+"; " +
+                        "java.lang.reflect.Field fieldW = "+getField("dicWrite")+";" +
                         "java.util.HashMap dicR =(java.util.HashMap) fieldR.get("+getEntryfromDatabase("c")+");" +
                         "java.util.HashMap dicW =(java.util.HashMap) fieldW.get("+getEntryfromDatabase("c")+");" +
                        "if(dicW.get(f)==null){ " +
@@ -132,8 +132,8 @@ public class CommandReadWriteOutside extends Command {
                         "if ("+getEntryfromDatabase("c")+" == null){" +
                         addClassToDatabase("c")+";" +
                         "}" +
-                        "java.lang.reflect.Field fieldR = getField(\""+entryClassName+"\",\"dicRead\"); " +
-                        "java.lang.reflect.Field fieldW = getField(\""+entryClassName+"\",\"dicWrite\");" +
+                        "java.lang.reflect.Field fieldR ="+getField("dicRead")+"; " +
+                        "java.lang.reflect.Field fieldW = "+getField("dicWrite")+";" +
                         "java.util.HashMap dicR =(java.util.HashMap) fieldR.get("+getEntryfromDatabase("c")+");" +
                         "java.util.HashMap dicW =(java.util.HashMap) fieldW.get("+getEntryfromDatabase("c")+");" +
                         "if(dicR.get(f)==null){ " +
@@ -146,7 +146,7 @@ public class CommandReadWriteOutside extends Command {
 
         methods[2] = CtNewMethod.make(
                 "public static int getReaderCounter(Class c,String f) {" +
-                        "java.lang.reflect.Field fieldR = getField(\""+entryClassName+"\",\"dicRead\");" +
+                        "java.lang.reflect.Field fieldR = "+getField("dicRead")+";" +
                         "java.util.HashMap dicR =(java.util.HashMap) fieldR.get("+getEntryfromDatabase("c")+");" +
                         "if(dicR.get(f)==null){" +
                             "return 0;" +
@@ -157,7 +157,7 @@ public class CommandReadWriteOutside extends Command {
 
         methods[3] = CtNewMethod.make(
                 "public static int getWriterCounter(Class c,String f) {" +
-                        "java.lang.reflect.Field fieldW = getField(\""+entryClassName+"\",\"dicWrite\");" +
+                        "java.lang.reflect.Field fieldW = "+getField("dicWrite")+";" +
                         "java.util.HashMap dicW =(java.util.HashMap) fieldW.get("+getEntryfromDatabase("c")+");" +
                         "if(dicW.get(f)==null){" +
                         "return 0;}"+

@@ -18,6 +18,10 @@ public abstract class Command {
         return  "addClass("+var+")";
     }
 
+    protected String getField(String var){
+        return  "getField(\""+var+"\")";
+    }
+
     public abstract void  execute (CtClass ctClass) throws NotFoundException, CannotCompileException;
 
     public abstract String totalText() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException;
@@ -26,5 +30,5 @@ public abstract class Command {
 
     public abstract CtField[] addFields(CtClass entry) throws NotFoundException, CannotCompileException;
 
-    public abstract CtMethod[] addMethods(CtClass database,String entryClassName) throws NotFoundException, CannotCompileException;
+    public abstract CtMethod[] addMethods(CtClass database) throws NotFoundException, CannotCompileException;
 }

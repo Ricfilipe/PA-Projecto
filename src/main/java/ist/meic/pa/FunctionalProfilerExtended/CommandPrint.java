@@ -37,5 +37,5 @@ public class CommandPrint extends Command {
     public CtField[] addFields(CtClass entry) { return null; }
 
     @Override
-    public CtMethod[] addMethods(CtClass database, String entryClassName) { return null; }
+    public CtMethod[] addMethods(CtClass database) { return null; }
 }

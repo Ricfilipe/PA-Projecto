@@ -41,7 +41,7 @@ public class WithFunctionalProfiler {
             for(CtField field : cmd.addFields(entry)){
                 entry.addField(field);
             }
-            for(CtMethod method : cmd.addMethods(database, Entry.class.getName())){
+            for(CtMethod method : cmd.addMethods(database)){
                 database.addMethod(method);
             }
             pool.importPackage("ist.meic.pa.FunctionalProfilerExtended");
