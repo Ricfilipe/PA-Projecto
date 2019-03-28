@@ -6,6 +6,7 @@ package ist.meic.pa.FunctionalProfilerExtended;
 
 import javassist.*;
 
+@SuppressWarnings("Duplicates")
 public class WithFunctionalProfiler {
     public static void main(String[] args) throws Throwable {
         if (args.length < 1) { }
@@ -37,10 +38,10 @@ public class WithFunctionalProfiler {
             }
             CtClass database = ClassPool.getDefault().get(Database.class.getName());
             CtClass entry = ClassPool.getDefault().get(Entry.class.getName());
-            for(CtField field :cmd.addFields(entry)){
+            for(CtField field : cmd.addFields(entry)){
                 entry.addField(field);
             }
-            for(CtMethod method :cmd.addMethods(database, Entry.class.getName())){
+            for(CtMethod method : cmd.addMethods(database, Entry.class.getName())){
                 database.addMethod(method);
             }
             pool.importPackage("ist.meic.pa.FunctionalProfilerExtended");

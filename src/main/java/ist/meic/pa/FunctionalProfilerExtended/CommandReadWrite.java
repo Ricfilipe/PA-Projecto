@@ -11,36 +11,35 @@ import javassist.expr.FieldAccess;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+@SuppressWarnings("Duplicates")
 public class CommandReadWrite extends Command {
 
     // Adds the code that increments the write/read counter for the class
     public void execute(CtClass ctClass)throws NotFoundException, CannotCompileException {
         final String templateWrite =
-                "{" +
-                        " Database.addWriter($0.getClass());" +
-                        " $0.%s = $1;" +
-                        "}";
+            "{" +
+                " Database.addWriter($0.getClass());" +
+                " $0.%s = $1;" +
+            "}";
 
         final String templateWriteOnConstructor =
-                "{" +
-
-                        "if($0 != this){"+
-                        " Database.addWriter($0.getClass());" +
-                                "}" +
-                        " $0.%s = $1;" +
-                        "}";
+            "{" +
+                "if($0 != this){"+
+                " Database.addWriter($0.getClass());" +
+                        "}" +
+                " $0.%s = $1;" +
+            "}";
         final String templateRead =
-                "{" +
-                        " Database.addReader($0.getClass());" +
-                        " $_=$0.%s;" +
-                        "}";
+            "{" +
+                " Database.addReader($0.getClass());" +
+                " $_=$0.%s;" +
+            "}";
         for (CtConstructor ctConstructor : ctClass.getDeclaredConstructors()) {
             ctConstructor.instrument(addCodeIfReaderWriter(templateRead,templateWriteOnConstructor));
         }
         for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
             ctMethod.instrument(addCodeIfReaderWriter(templateRead,templateWrite));
         }
-
     }
 
     // Returns the Expression Editor with the information if the accessed field was a read or write
@@ -49,24 +48,24 @@ public class CommandReadWrite extends Command {
         return new ExprEditor() {
             public void edit(FieldAccess fa)
                     throws CannotCompileException {
-                if (fa.isReader()) {
-                    String name = fa.getFieldName();
-                    fa.replace(String.format(template1,
-                            name));
-                }else if (fa.isWriter() ) {
-                    String name = fa.getFieldName();
-                    fa.replace(String.format(template2,
-                            name));
-                }
+            if (fa.isReader()) {
+                String name = fa.getFieldName();
+                fa.replace(String.format(template1,
+                        name));
+            }else if (fa.isWriter() ) {
+                String name = fa.getFieldName();
+                fa.replace(String.format(template2,
+                        name));
+            }
             }
         };
     }
-
 
     // Returns string with program's total writes/reads
     @Override
     public String totalText() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException{
         Class db = Database.class;
+
         int totalwrites=0;
         for(Class c: Database.dictionary.keySet()){
             Method getWriterCounter = db.getDeclaredMethod("getWriterCounter", c.getClass());
@@ -96,48 +95,41 @@ public class CommandReadWrite extends Command {
     public CtField[] addFields(CtClass entry) throws NotFoundException, CannotCompileException{
         CtField fields[] = new CtField[2];
         fields[0] = CtField.make("public int readerCounter = 0;", entry);
-
-
         fields[1] = CtField.make("public int writeCounter = 0;", entry);
         return fields;
-
     }
 
-    // Adds the addWriter, addReader methods to the Database class and the both the get counter methods
+    // Adds the addWriter, addReader methods to the Database class and both the get counter methods
     @Override
     public CtMethod[] addMethods(CtClass database, String entryClassName) throws NotFoundException, CannotCompileException{
-
         CtMethod[]  methods = new CtMethod[4];
-        methods[0]= CtNewMethod.make(
-                "public static void addWriter(Class c) {" +
-                        "if ("+getEntryfromDatabase("c")+"== null){" +
-                            addClassToDatabase("c")+";" +
-                        "}" +
-                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"writeCounter\"); " +
-                        "field.set("+getEntryfromDatabase("c")+",new Integer (((Integer)field.get("+getEntryfromDatabase("c")+")).intValue()+1));" +
-                        "}", database);
 
+        methods[0]= CtNewMethod.make(
+        "public static void addWriter(Class c) {" +
+                "if ("+getEntryfromDatabase("c")+"== null){" +
+                    addClassToDatabase("c")+";" +
+                "}" +
+                "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"writeCounter\"); " +
+                "field.set("+getEntryfromDatabase("c")+",new Integer (((Integer)field.get("+getEntryfromDatabase("c")+")).intValue()+1));" +
+                "}", database);
 
         methods[1] = CtNewMethod.make(
-                "public static void addReader(Class c) {" +
-                        "if ("+getEntryfromDatabase("c")+" == null){" +
-                        addClassToDatabase("c")+";}" +
-                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"readerCounter\"); " +
-                        "field.set("+getEntryfromDatabase("c")+",new Integer (((Integer)field.get("+getEntryfromDatabase("c")+")).intValue()+1));" +
-                        "}", database);
-
-
+        "public static void addReader(Class c) {" +
+                "if ("+getEntryfromDatabase("c")+" == null){" +
+                addClassToDatabase("c")+";}" +
+                "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"readerCounter\"); " +
+                "field.set("+getEntryfromDatabase("c")+",new Integer (((Integer)field.get("+getEntryfromDatabase("c")+")).intValue()+1));" +
+                "}", database);
 
         methods[2] = CtNewMethod.make(
-                "public static int getReaderCounter(Class c) {" +
-                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"readerCounter\"); " +
-                        "return ((Integer)field.get("+getEntryfromDatabase("c")+")).intValue(); }", database);
-
+        "public static int getReaderCounter(Class c) {" +
+                "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"readerCounter\"); " +
+                "return ((Integer)field.get("+getEntryfromDatabase("c")+")).intValue(); }", database);
 
         methods[3] = CtNewMethod.make(
-                "public static int getWriterCounter(Class c) {" +
-                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"writeCounter\"); " +
-                        "return ((Integer)field.get("+getEntryfromDatabase("c")+")).intValue(); }", database);
+        "public static int getWriterCounter(Class c) {" +
+                "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"writeCounter\"); " +
+                "return ((Integer)field.get("+getEntryfromDatabase("c")+")).intValue(); }", database);
 
         return methods;
     }

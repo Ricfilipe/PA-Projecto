@@ -12,6 +12,7 @@ public class CommandPrint extends Command {
     public CommandPrint (Command cmd){
         this.cmd = cmd;
     }
+
     @Override
     public void execute(CtClass ctClass) throws NotFoundException, CannotCompileException {
         try{
