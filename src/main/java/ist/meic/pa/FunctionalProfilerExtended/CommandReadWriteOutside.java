@@ -111,13 +111,13 @@ public class CommandReadWriteOutside extends Command {
         CtMethod[]  methods = new CtMethod[4];
         methods[0] = CtNewMethod.make(
                 "public static void addWriterOutside(Class c,String f) {" +
-                        "if (dictionary.get(c) == null){" +
-                        "addClass(c);" +
+                        "if ("+getEntryfromDatabase("c")+" == null){" +
+                        addClassToDatabase("c")+";" +
                         "}" +
                         "java.lang.reflect.Field fieldR = getField(\""+entryClassName+"\",\"dicRead\"); " +
                         "java.lang.reflect.Field fieldW = getField(\""+entryClassName+"\",\"dicWrite\");" +
-                        "java.util.HashMap dicR =(java.util.HashMap) fieldR.get(dictionary.get(c));" +
-                        "java.util.HashMap dicW =(java.util.HashMap) fieldW.get(dictionary.get(c));" +
+                        "java.util.HashMap dicR =(java.util.HashMap) fieldR.get("+getEntryfromDatabase("c")+");" +
+                        "java.util.HashMap dicW =(java.util.HashMap) fieldW.get("+getEntryfromDatabase("c")+");" +
                        "if(dicW.get(f)==null){ " +
                         "dicR.put(f,new Integer(0));" +
                         "dicW.put(f,new Integer(1));" +
@@ -129,13 +129,13 @@ public class CommandReadWriteOutside extends Command {
 
         methods[1] = CtNewMethod.make(
                 "public static void addReaderOutside(Class c,String f) {" +
-                        "if (dictionary.get(c) == null){" +
-                        "addClass(c);" +
+                        "if ("+getEntryfromDatabase("c")+" == null){" +
+                        addClassToDatabase("c")+";" +
                         "}" +
                         "java.lang.reflect.Field fieldR = getField(\""+entryClassName+"\",\"dicRead\"); " +
                         "java.lang.reflect.Field fieldW = getField(\""+entryClassName+"\",\"dicWrite\");" +
-                        "java.util.HashMap dicR =(java.util.HashMap) fieldR.get(dictionary.get(c));" +
-                        "java.util.HashMap dicW =(java.util.HashMap) fieldW.get(dictionary.get(c));" +
+                        "java.util.HashMap dicR =(java.util.HashMap) fieldR.get("+getEntryfromDatabase("c")+");" +
+                        "java.util.HashMap dicW =(java.util.HashMap) fieldW.get("+getEntryfromDatabase("c")+");" +
                         "if(dicR.get(f)==null){ " +
                         "dicR.put(f,new Integer(1));" +
                         "dicR.put(f,new Integer(0));" +
@@ -147,7 +147,7 @@ public class CommandReadWriteOutside extends Command {
         methods[2] = CtNewMethod.make(
                 "public static int getReaderCounter(Class c,String f) {" +
                         "java.lang.reflect.Field fieldR = getField(\""+entryClassName+"\",\"dicRead\");" +
-                        "java.util.HashMap dicR =(java.util.HashMap) fieldR.get(dictionary.get(c));" +
+                        "java.util.HashMap dicR =(java.util.HashMap) fieldR.get("+getEntryfromDatabase("c")+");" +
                         "if(dicR.get(f)==null){" +
                             "return 0;" +
                         "}"+
@@ -158,7 +158,7 @@ public class CommandReadWriteOutside extends Command {
         methods[3] = CtNewMethod.make(
                 "public static int getWriterCounter(Class c,String f) {" +
                         "java.lang.reflect.Field fieldW = getField(\""+entryClassName+"\",\"dicWrite\");" +
-                        "java.util.HashMap dicW =(java.util.HashMap) fieldW.get(dictionary.get(c));" +
+                        "java.util.HashMap dicW =(java.util.HashMap) fieldW.get("+getEntryfromDatabase("c")+");" +
                         "if(dicW.get(f)==null){" +
                         "return 0;}"+
                             "return  ((Integer) dicW.get(f)).intValue();" +

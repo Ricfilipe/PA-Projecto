@@ -10,6 +10,14 @@ import java.lang.reflect.InvocationTargetException;
 
 @NotIntersect
 public abstract class Command {
+    protected String getEntryfromDatabase(String var){
+     return  "dictionary.get("+var+")";
+    }
+
+    protected String addClassToDatabase(String var){
+        return  "addClass("+var+")";
+    }
+
     public abstract void  execute (CtClass ctClass) throws NotFoundException, CannotCompileException;
 
     public abstract String totalText() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException;
