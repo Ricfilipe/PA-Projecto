@@ -17,12 +17,12 @@ public class Database {
         Command cmd = (Command) Class.forName(cmdString).newInstance();
 
         String buffer= "";
-        dictionary
+
         for(Class c: dictionary.keySet()){
-            buffer= buffer + c+" ->" + cmd.sumText(c) + "\n";
+            buffer=  buffer + "\n"+ c+" ->" + cmd.sumText(c) ;
         }
 
-        return cmd.totalText() + "\n"
+        return cmd.totalText()
                 + buffer;
     }
 

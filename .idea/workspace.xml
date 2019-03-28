@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3977f22d-1af3-4634-8f90-6e146cbb2d8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/PA-Projecto.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/PA-Projecto.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -109,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
@@ -118,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-64">
-              <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+            <state relative-caret-position="174">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -239,13 +231,13 @@
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfiler/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite2.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/ProfilerTranslator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/tests/Tests.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWriteOutside.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/WithFunctionalProfiler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandReadWrite.java" />
         <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/CommandPrint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java" />
       </list>
     </option>
   </component>
@@ -327,7 +319,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553772982417" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553773229106" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PA-JAexemplo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -489,7 +481,7 @@
       <workItem from="1553479098966" duration="555000" />
       <workItem from="1553522961444" duration="3930000" />
       <workItem from="1553677419088" duration="12519000" />
-      <workItem from="1553771277913" duration="1690000" />
+      <workItem from="1553771277913" duration="1948000" />
     </task>
     <task id="LOCAL-00001" summary="update gradle">
       <created>1553075242628</created>
@@ -509,7 +501,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41802000" />
+    <option name="totallyTimeSpent" value="42060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,7 +516,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.613924" visible="true" weight="0.20872483" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.613924" visible="true" weight="0.20872483" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -533,7 +525,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -739,16 +731,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/tests/test2.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tests/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -827,6 +809,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ist/meic/pa/FunctionalProfilerExtended/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
