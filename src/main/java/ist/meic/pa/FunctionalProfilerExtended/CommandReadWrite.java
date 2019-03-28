@@ -93,51 +93,52 @@ public class CommandReadWrite extends Command {
 
     // Adds the fields read and write counters to the Entry class
     @Override
-    public void addFields(ClassPool pool) throws NotFoundException, CannotCompileException{
-        CtClass entry = ClassPool.getDefault().get(Entry.class.getName());
+    public CtField[] addFields(CtClass entry) throws NotFoundException, CannotCompileException{
+        CtField fields[] = new CtField[2];
+        fields[0] = CtField.make("public int readerCounter = 0;", entry);
 
-        CtField readerCounter = CtField.make("public int readerCounter = 0;", entry);
-        entry.addField(readerCounter);
 
-        CtField writeCounter = CtField.make("public int writeCounter = 0;", entry);
-        entry.addField(writeCounter);
+        fields[1] = CtField.make("public int writeCounter = 0;", entry);
+        return fields;
+
     }
 
     // Adds the addWriter, addReader methods to the Database class and the both the get counter methods
     @Override
-    public void addMethods(ClassPool pool) throws NotFoundException, CannotCompileException{
-        CtClass database = ClassPool.getDefault().get(Database.class.getName());
+    public CtMethod[] addMethods(CtClass database, String entryClassName) throws NotFoundException, CannotCompileException{
 
-        CtMethod addWriter = CtNewMethod.make(
+        CtMethod[]  methods = new CtMethod[4];
+        methods[0]= CtNewMethod.make(
                 "public static void addWriter(Class c) {" +
                         "if (dictionary.get(c) == null){" +
                             "addClass(c);" +
                         "}" +
-                        "java.lang.reflect.Field field = getField(\""+Entry.class.getName()+"\",\"writeCounter\"); " +
+                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"writeCounter\"); " +
                         "field.set(dictionary.get(c),new Integer (((Integer)field.get(dictionary.get(c))).intValue()+1));" +
                         "}", database);
-        database.addMethod(addWriter);
 
-        CtMethod addReader = CtNewMethod.make(
+
+        methods[1] = CtNewMethod.make(
                 "public static void addReader(Class c) {" +
                         "if (dictionary.get(c) == null){" +
                         "addClass(c);}" +
-                        "java.lang.reflect.Field field = getField(\""+Entry.class.getName()+"\",\"readerCounter\"); " +
+                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"readerCounter\"); " +
                         "field.set(dictionary.get(c),new Integer (((Integer)field.get(dictionary.get(c))).intValue()+1));" +
                         "}", database);
-        database.addMethod(addReader);
 
 
-        CtMethod getReaderCounter = CtNewMethod.make(
+
+        methods[2] = CtNewMethod.make(
                 "public static int getReaderCounter(Class c) {" +
-                        "java.lang.reflect.Field field = getField(\""+Entry.class.getName()+"\",\"readerCounter\"); " +
+                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"readerCounter\"); " +
                         "return ((Integer)field.get(dictionary.get(c))).intValue(); }", database);
-        database.addMethod(getReaderCounter);
 
-        CtMethod getWriteCounter = CtNewMethod.make(
+
+        methods[3] = CtNewMethod.make(
                 "public static int getWriterCounter(Class c) {" +
-                        "java.lang.reflect.Field field = getField(\""+Entry.class.getName()+"\",\"writeCounter\"); " +
+                        "java.lang.reflect.Field field = getField(\""+entryClassName+"\",\"writeCounter\"); " +
                         "return ((Integer)field.get(dictionary.get(c))).intValue(); }", database);
-        database.addMethod(getWriteCounter);
+
+        return methods;
     }
 }

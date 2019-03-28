@@ -33,8 +33,8 @@ public class CommandPrint extends Command {
     }
 
     @Override
-    public void addFields(ClassPool pool) { return; }
+    public CtField[] addFields(CtClass entry) { return null; }
 
     @Override
-    public void addMethods(ClassPool pool) { return; }
+    public CtMethod[] addMethods(CtClass database, String entryClassName) { return null; }
 }

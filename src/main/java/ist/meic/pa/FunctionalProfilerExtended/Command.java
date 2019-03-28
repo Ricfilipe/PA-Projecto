@@ -4,10 +4,7 @@
 
 package ist.meic.pa.FunctionalProfilerExtended;
 
-import javassist.CannotCompileException;
-import javassist.CtClass;
-import javassist.NotFoundException;
-import javassist.ClassPool;
+import javassist.*;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,7 +16,7 @@ public abstract class Command {
 
     public abstract  String sumText(Class c) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException;
 
-    public abstract void addFields(ClassPool pool) throws NotFoundException, CannotCompileException;
+    public abstract CtField[] addFields(CtClass entry) throws NotFoundException, CannotCompileException;
 
-    public abstract void addMethods(ClassPool pool) throws NotFoundException, CannotCompileException;
+    public abstract CtMethod[] addMethods(CtClass database,String entryClassName) throws NotFoundException, CannotCompileException;
 }

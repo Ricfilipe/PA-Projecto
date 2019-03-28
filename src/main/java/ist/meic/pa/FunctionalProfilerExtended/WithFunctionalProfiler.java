@@ -4,9 +4,7 @@
  */
 package ist.meic.pa.FunctionalProfilerExtended;
 
-import javassist.ClassPool;
-import javassist.Loader;
-import javassist.Translator;
+import javassist.*;
 
 public class WithFunctionalProfiler {
     public static void main(String[] args) throws Throwable {
@@ -37,9 +35,14 @@ public class WithFunctionalProfiler {
                 }
                 translator = new ProfilerTranslator(cmd);
             }
-
-            cmd.addFields(pool);
-            cmd.addMethods(pool);
+            CtClass database = ClassPool.getDefault().get(Database.class.getName());
+            CtClass entry = ClassPool.getDefault().get(Entry.class.getName());
+            for(CtField field :cmd.addFields(entry)){
+                entry.addField(field);
+            }
+            for(CtMethod method :cmd.addMethods(database, Entry.class.getName())){
+                database.addMethod(method);
+            }
             pool.importPackage("ist.meic.pa.FunctionalProfilerExtended");
             Loader classLoader = new Loader();
             classLoader.addTranslator(pool, translator);

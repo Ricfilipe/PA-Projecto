@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.io.*;
 
-@Profiler("ReadWriteOutside")
+@Profiler()
 public class Tests {
 	public static void main(String[] args) {
 		if (args.length < 1) {
