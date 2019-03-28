@@ -7,6 +7,7 @@ package ist.meic.pa.FunctionalProfiler;
 import javassist.CannotCompileException;
 import javassist.CtClass;
 import javassist.NotFoundException;
+
 @NotIntersect
 public abstract class Command {
     public abstract void  execute (CtClass ctClass) throws NotFoundException, CannotCompileException;

@@ -15,7 +15,7 @@ public class CommandPrint extends Command {
         try{
             CtMethod ctMethod = ctClass.getDeclaredMethods("main")[0];
             ctMethod.insertAfter("System.out.print(Database.toText());");
-        }catch (Exception e){
+        } catch (Exception e) {
             //ignore
         }
     }

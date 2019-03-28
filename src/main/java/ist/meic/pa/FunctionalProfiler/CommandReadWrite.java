@@ -46,15 +46,15 @@ public class CommandReadWrite extends Command{
         return new ExprEditor() {
             public void edit(FieldAccess fa)
                     throws CannotCompileException {
-                if (fa.isReader()) {
-                    String name = fa.getFieldName();
-                    fa.replace(String.format(template1,
-                            name));
-                } else if (fa.isWriter()) {
-                    String name = fa.getFieldName();
-                    fa.replace(String.format(template2,
-                            name));
-                }
+            if (fa.isReader()) {
+                String name = fa.getFieldName();
+                fa.replace(String.format(template1,
+                        name));
+            } else if (fa.isWriter()) {
+                String name = fa.getFieldName();
+                fa.replace(String.format(template2,
+                        name));
+            }
             }
         };
     }
