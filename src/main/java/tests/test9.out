@@ -1,3 +1,0 @@
-Total reads: 3 Total writes: 2
-class tests.Person -> reads: 1 writes: 0
-class tests.Student -> reads: 2 writes: 2
