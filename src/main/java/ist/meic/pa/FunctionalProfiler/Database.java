@@ -13,7 +13,6 @@ public class Database {
         public int compare(Class obj1, Class obj2) {
             String s1 = obj1.getName();
             String s2 = obj2.getName();
-
             return s1.compareTo(s2);
         }
     }
@@ -22,7 +21,6 @@ public class Database {
 
     public static String toText(){
         CommandReadWrite cmd= new CommandReadWrite();
-
         String buffer= "";
 
         List<Class> sorted = new ArrayList<>(dictionary.keySet());
@@ -31,9 +29,7 @@ public class Database {
         for(Class c: sorted){
             buffer=  buffer + "\n"+ c+" ->" + cmd.sumText(c) ;
         }
-
-        return cmd.totalText()
-                + buffer;
+        return cmd.totalText() + buffer;
     }
 
     public static void addWriter(Class c){
