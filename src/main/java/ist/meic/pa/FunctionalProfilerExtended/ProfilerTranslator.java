@@ -26,7 +26,7 @@ public class ProfilerTranslator implements Translator {
     public void onLoad(ClassPool pool, String classname) throws NotFoundException, CannotCompileException {
         CtClass ctClass = pool.get(classname);
 
-        // If annotation NotIntersect is not present execute this
+        // If annotation NotIntersect is present, do nothing, otherwise execute remainder of method
         try {
             Object an = Class.forName(classname).getAnnotation(NotIntersect.class);
             if (an != null) {
