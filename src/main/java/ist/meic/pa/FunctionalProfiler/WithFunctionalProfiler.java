@@ -8,17 +8,22 @@ import javassist.ClassPool;
 import javassist.Loader;
 import javassist.Translator;
 
+@SuppressWarnings("Duplicates")
 public class WithFunctionalProfiler {
     public static void main(String[] args) throws Throwable {
         if (args.length < 1) {
 
-        } else {
+        }
+        else {
             String[] realArgs;
-            if(args.length==1){
+
+            if (args.length==1) {
                 realArgs=args[0].split(" ");
-            }else{
+            }
+            else {
                 realArgs=args;
             }
+
             Translator translator = new ProfilerTranslator();
             ClassPool pool = ClassPool.getDefault();
             pool.importPackage("ist.meic.pa.FunctionalProfiler");
@@ -26,10 +31,8 @@ public class WithFunctionalProfiler {
             classLoader.addTranslator(pool, translator);
             String[] restArgs = new String[realArgs.length - 1];
             System.arraycopy(realArgs, 1, restArgs, 0, restArgs.length);
-
-                classLoader.run(realArgs[0], restArgs);
-
-        }
+            classLoader.run(realArgs[0], restArgs);
         }
     }
+}
 
