@@ -78,16 +78,19 @@ public class CommandReadWriteOutside extends Command {
     @Override
     public String sumText(Class c) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         Class db = Database.class;
-        Field[] fs = c.getDeclaredFields();
+        ;
         Method getReaderCounter = db.getDeclaredMethod("getReaderCounter", c.getClass(),String.class);
         Method getWriterCounter = db.getDeclaredMethod("getWriterCounter", c.getClass(),String.class);
         String buffer="";
 
-        for (Field field : fs) {
+        for(; c != Object.class ;c=c.getSuperclass()) {
+            Field[] fs = c.getDeclaredFields();
+            for (Field field : fs) {
 
-            buffer= buffer+"\n" + field.getName()+"-> reads: "+
-            getReaderCounter.invoke(null,c,field.getName()) + " write: " +
-            getWriterCounter.invoke(null,c,field.getName());
+                buffer = buffer + "\n" + field.getName() + "-> reads: " +
+                        getReaderCounter.invoke(null, c, field.getName()) + " write: " +
+                        getWriterCounter.invoke(null, c, field.getName());
+            }
         }
         return buffer+"\n";
     }
