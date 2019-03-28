@@ -20,17 +20,17 @@ public class CommandReadWrite extends Command{
                 " $0.%s = $1;" +
             "}";
         final String templateWriteOnConstructor =
-                "{" +
-                    "if($0 != this){"+
-                    " Database.addWriter($0.getClass());" +
-                    "}" +
-                    " $0.%s = $1;" +
-                "}";
+            "{" +
+                "if($0 != this){"+
+                " Database.addWriter($0.getClass());" +
+                "}" +
+                " $0.%s = $1;" +
+            "}";
         final String templateRead =
-                "{" +
-                    " Database.addReader($0.getClass());" +
-                    " $_=$0.%s;" +
-                "}";
+            "{" +
+                " Database.addReader($0.getClass());" +
+                " $_=$0.%s;" +
+            "}";
         for (CtConstructor ctConstructor : ctClass.getDeclaredConstructors()) {
             ctConstructor.instrument(addCodeIfReaderWriter(templateRead,templateWriteOnConstructor));
         }
@@ -62,12 +62,12 @@ public class CommandReadWrite extends Command{
     // Returns string with program's total writes/reads
     @Override
     public String totalText() {
-        int totalwrites=0;
+        int totalwrites = 0;
         for(Class c: Database.dictionary.keySet()){
             totalwrites = totalwrites + Database.dictionary.get(c).writeCounter;
         }
 
-        int totalreads=0;
+        int totalreads = 0;
         for (Class c : Database.dictionary.keySet()) {
             totalreads = totalreads + Database.dictionary.get(c).readerCounter;
         }
@@ -80,5 +80,4 @@ public class CommandReadWrite extends Command{
     public String sumText(Class c) {
         return  " reads: " + Database.dictionary.get(c).readerCounter + " write: " + Database.dictionary.get(c).writeCounter;
     }
-
 }
