@@ -8,67 +8,51 @@ import javassist.*;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
+@SuppressWarnings("Duplicates")
 public class CommandReadWrite extends Command{
 
     // Adds the code that increments the write/read counter for the class
+    @Override
     public void execute(CtClass ctClass)throws NotFoundException, CannotCompileException {
         final String templateWrite =
-                "{" +
-                        " Database.addWriter($0.getClass());" +
-                        " $0.%s = $1;" +
-                        "}";
-
+            "{" +
+                " Database.addWriter($0.getClass());" +
+                " $0.%s = $1;" +
+            "}";
         final String templateWriteOnConstructor =
                 "{" +
-
-                        "if($0 != this){"+
-                        " Database.addWriter($0.getClass());" +
-                                "}" +
-                        " $0.%s = $1;" +
-                        "}";
+                    "if($0 != this){"+
+                    " Database.addWriter($0.getClass());" +
+                    "}" +
+                    " $0.%s = $1;" +
+                "}";
         final String templateRead =
                 "{" +
-                        " Database.addReader($0.getClass());" +
-                        " $_=$0.%s;" +
-                        "}";
+                    " Database.addReader($0.getClass());" +
+                    " $_=$0.%s;" +
+                "}";
         for (CtConstructor ctConstructor : ctClass.getDeclaredConstructors()) {
-            ctConstructor.instrument(addCodeIfReader(templateRead));
+            ctConstructor.instrument(addCodeIfReaderWriter(templateRead,templateWriteOnConstructor));
         }
         for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
-            ctMethod.instrument(addCodeIfReader(templateRead));
+            ctMethod.instrument(addCodeIfReaderWriter(templateRead,templateWrite));
         }
-        for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
-            ctMethod.instrument(addCodeIfWriter(templateWrite));
-        }
-        for (CtConstructor ctConstructor : ctClass.getDeclaredConstructors()) {
-            ctConstructor.instrument(addCodeIfWriter(templateWriteOnConstructor));
-        }
+
     }
 
-    // Returns the Expression Editor with the information if the accessed field was a read or not
+    // Returns the Expression Editor with the information if the accessed field was a read or write
     // If it was add code, otherwise do nothing
-    public ExprEditor addCodeIfReader(String template) {
+    public ExprEditor addCodeIfReaderWriter(String template1, String template2) {
         return new ExprEditor() {
             public void edit(FieldAccess fa)
                     throws CannotCompileException {
                 if (fa.isReader()) {
                     String name = fa.getFieldName();
-                    fa.replace(String.format(template,
+                    fa.replace(String.format(template1,
                             name));
-                }
-            }
-        };
-    }
-
-    // Returns the Expression Editor with the information if the accessed field was a write or not
-    // If it was and was not a self write in constructor add code, otherwise do nothing
-    public ExprEditor addCodeIfWriter(String template) {
-        return new ExprEditor() {
-            public void edit(FieldAccess fa)
-                    throws CannotCompileException {
-                if (fa.isWriter() ) {
+                } else if (fa.isWriter()) {
                     String name = fa.getFieldName();
-                    fa.replace(String.format(template,
+                    fa.replace(String.format(template2,
                             name));
                 }
             }
