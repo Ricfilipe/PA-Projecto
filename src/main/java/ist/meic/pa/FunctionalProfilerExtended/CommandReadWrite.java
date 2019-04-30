@@ -88,7 +88,7 @@ public class CommandReadWrite extends Command {
         Class db = Database.class;
         Method getReaderCounter = db.getDeclaredMethod("getReaderCounter", c.getClass());
         Method getWriterCounter = db.getDeclaredMethod("getWriterCounter", c.getClass());
-        return  " reads: " + getReaderCounter.invoke(null, c) + " write: " + getWriterCounter.invoke(null, c);
+        return  " reads: " + getReaderCounter.invoke(null, c) + " writes: " + getWriterCounter.invoke(null, c);
     }
 
     // Adds the fields read and write counters to the Entry class

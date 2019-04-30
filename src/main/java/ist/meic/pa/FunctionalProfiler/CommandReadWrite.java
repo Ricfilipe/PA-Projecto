@@ -78,6 +78,6 @@ public class CommandReadWrite extends Command{
     // Returns string with class total writes/reads
     @Override
     public String sumText(Class c) {
-        return  " reads: " + Database.dictionary.get(c).readerCounter + " write: " + Database.dictionary.get(c).writeCounter;
+        return  " reads: " + Database.dictionary.get(c).readerCounter + " writes: " + Database.dictionary.get(c).writeCounter;
     }
 }
